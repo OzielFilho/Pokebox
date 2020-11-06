@@ -1,0 +1,70 @@
+name: pokebox
+description: A new Flutter project.
+
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # State management
+  mobx:
+  flutter_mobx:
+
+  # Dependency injection
+  get_it: ^4.0.4
+
+  #http for api
+  http: ^0.12.2
+
+  #cached image network
+  cached_network_image: ^2.3.3
+
+  flutter_icons: ^1.1.0
+
+  getwidget: ^1.2.2
+ 
+  cupertino_icons: ^1.0.0
+
+dev_dependencies:
+    # Linter
+  effective_dart: ^1.2.4
+
+  # Codegen for MobX
+  build_runner:
+  mobx_codegen:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+
+  
+  uses-material-design: true
+
+  
+  assets:
+    - assets/images/ash_image.png
+    - assets/images/pokemon_image.png
+    
+    
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+
+  
+  fonts:
+    - family: SourceSansPro
+      fonts:
+      - asset: fonts/SourceSansPro-Regular.ttf
+        weight: 400
+      - asset: fonts/SourceSansPro-SemiBold.ttf
+        weight: 600
+      - asset: fonts/SourceSansPro-Bold.ttf
+weight: 700q
