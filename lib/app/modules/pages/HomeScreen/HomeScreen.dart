@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
+
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:pokebox/app/modules/pages/GolpeScreen/GolpeScreen.dart';
 import 'package:pokebox/core/viewModel/poke_view_model/poke_view_model.dart';
-import 'package:pokebox/utils/theme/Theme.dart';
+
 import 'package:pokebox/utils/widgets/Draw/Draw.dart';
 import 'package:pokebox/utils/widgets/PokeWidget/PokeWidget.dart';
 
@@ -24,10 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
         iconTheme: new IconThemeData(color: Theme.of(context).primaryColor),
         searchBar: true,
         searchBarColorTheme: Theme.of(context).primaryColor,
-        title: Text(
-          "Home",
-          style: Theme.of(context).textTheme.headline2,
-        ),
+        
       ),
       drawer: Draw(),
       body: ListView(
@@ -41,14 +39,14 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Text(
                   'Pokemons',
-                  style: Theme.of(context).textTheme.headline2,
+                  style: Theme.of(context).textTheme.headline1,
                 ),
                 SizedBox(
                   height: 5,
                 ),
                 Container(
                   height: 2,
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).accentColor,
                 ),
                 SizedBox(
                   height: 15,
@@ -68,11 +66,31 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               itemCount: _pokeViewModel.listObjPokemon.length,
               itemBuilder: (context, index) {
-                // print(_pokeViewModel.listPokemon[index].name);
                 return _pokeViewModel.listObjPokemon != null
-                    ? PokeWidget(
-                        name: _pokeViewModel.listObjPokemon[index].name,
-                        urlImage: _pokeViewModel.listObjPokemon[index].urlImage)
+                    ? GestureDetector(
+                        onTap: () {
+                          Navigator.pushReplacementNamed(
+                            context,
+                            GolpeScreen.id,
+                            arguments: GolpeScreen(
+                              namePokemon:
+                                  _pokeViewModel.listObjPokemon[index].name,
+                              urlImagePokemon:
+                                  _pokeViewModel.listObjPokemon[index].urlImage,
+                              listGolpes: _pokeViewModel.listObjPokemon[index].golpes,
+                            ),
+                          );
+                          print(
+                            'pokemon ${_pokeViewModel.listObjPokemon[index].name}',
+                          );
+                        },
+                        child: PokeWidget(
+                          name: _pokeViewModel.listObjPokemon[index].name,
+                          urlImage:
+                              _pokeViewModel.listObjPokemon[index].urlImage,
+                          color: Theme.of(context).backgroundColor,
+                        ),
+                      )
                     : CircularProgressIndicator();
               },
             );

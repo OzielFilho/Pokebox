@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:getwidget/getwidget.dart';
-import 'package:pokebox/app/modules/pages/GolpeScreen/GolpeScreen.dart';
+
 import 'package:pokebox/app/modules/pages/HomeScreen/HomeScreen.dart';
+import 'package:pokebox/app/modules/pages/MaisProjetosScreen/MaisProjetosScreen.dart';
+import 'package:pokebox/app/modules/pages/SobreScreen/SobreScreen.dart';
 import 'package:pokebox/core/helpers/assetsHelper/AssetsHelper.dart';
 
 class Draw extends StatelessWidget {
@@ -15,7 +17,6 @@ class Draw extends StatelessWidget {
         children: [
           GFDrawerHeader(
             closeButton: GestureDetector(child: SizedBox()),
-            
             currentAccountPicture: GFAvatar(
               shape: GFAvatarShape.square,
               radius: 80.0,
@@ -28,7 +29,7 @@ class Draw extends StatelessWidget {
               children: <Widget>[
                 Text(
                   'Pokemon',
-                  style: Theme.of(context).textTheme.headline3,
+                  style: Theme.of(context).textTheme.subtitle1,
                 ),
                 Text(
                   'Pokemon@user.com',
@@ -43,12 +44,13 @@ class Draw extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                
-                
                 ListTile(
                   title: Row(
                     children: [
-                      Icon(FlutterIcons.home_ant,color: Theme.of(context).primaryColor,),
+                      Icon(
+                        FlutterIcons.home_ant,
+                        color: Theme.of(context).primaryColor,
+                      ),
                       SizedBox(
                         width: 15,
                       ),
@@ -58,27 +60,18 @@ class Draw extends StatelessWidget {
                       ),
                     ],
                   ),
-                  onTap: ()=>Navigator.pushReplacementNamed(context, HomeScreen.id),
+                  onTap: () =>
+                      Navigator.pushReplacementNamed(context, HomeScreen.id),
                 ),
                 ListTile(
+                  onTap: () =>
+                      Navigator.pushReplacementNamed(context, SobreScreen.id),
                   title: Row(
                     children: [
-                      Icon(FlutterIcons.pokeball_mco,color: Theme.of(context).primaryColor,),
-                      SizedBox(
-                        width: 15,
+                      Icon(
+                        FlutterIcons.info_outline_mdi,
+                        color: Theme.of(context).primaryColor,
                       ),
-                      Text(
-                        'Golpes',
-                        style: Theme.of(context).textTheme.headline2,
-                      ),
-                    ],
-                  ),
-                  onTap: ()=>Navigator.pushReplacementNamed(context, GolpeScreen.id),
-                ),
-                ListTile(
-                  title: Row(
-                    children: [
-                      Icon(FlutterIcons.info_outline_mdi,color: Theme.of(context).primaryColor,),
                       SizedBox(
                         width: 15,
                       ),
@@ -90,9 +83,12 @@ class Draw extends StatelessWidget {
                   ),
                 ),
                 ListTile(
+                  onTap: () => Navigator.pushReplacementNamed(
+                      context, MaisProjetosScreen.id),
                   title: Row(
                     children: [
-                      Icon(FlutterIcons.pokeball_mco,color: Theme.of(context).primaryColor),
+                      Icon(FlutterIcons.pokeball_mco,
+                          color: Theme.of(context).primaryColor),
                       SizedBox(
                         width: 15,
                       ),
@@ -104,12 +100,13 @@ class Draw extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 170,
+                  height: 230,
                 ),
                 ListTile(
                   title: Row(
                     children: [
-                      Icon(FlutterIcons.close_mdi,color: Theme.of(context).primaryColor),
+                      Icon(FlutterIcons.close_mdi,
+                          color: Theme.of(context).primaryColor),
                       SizedBox(
                         width: 15,
                       ),

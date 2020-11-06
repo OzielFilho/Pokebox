@@ -5,14 +5,14 @@ final appTheme = ThemeData(
   textTheme: TextTheme(
     headline1: TextStyle(
       fontFamily: 'SourceSansPro',
-      color: Colors.white,
+      color: Color(0xFFFFE600),
       fontSize: 25.0,
       fontWeight: FontWeight.w700,
       letterSpacing: 0.25,
     ),
     headline2: TextStyle(
       fontFamily: 'SourceSansPro',
-      color: Color(0xFFFFE600),
+      color: Colors.white,
       fontSize: 24.0,
       fontWeight: FontWeight.w700,
       letterSpacing: 0,
@@ -34,14 +34,14 @@ final appTheme = ThemeData(
     
     subtitle2: TextStyle(
       fontFamily: 'SourceSansPro',
-      color: Color(0xFFF0F0F5),
+      color: Colors.white,
       fontSize: 15.0,
       fontWeight: FontWeight.w700,
       letterSpacing: 0.25,
     ),
     button: TextStyle(
       fontFamily: 'SourceSansPro',
-      color: Colors.black,
+      color: Color(0xFFFFE600),
       fontSize: 13.0,
       fontWeight: FontWeight.w700,
       letterSpacing: 0.25,
@@ -55,14 +55,14 @@ final appTheme = ThemeData(
     ),
   ),
   
-  primaryColor: Color(0xFFFFE600),
-  accentColor: Color(0xFF1E74BA),
-  scaffoldBackgroundColor: Color(0xFF2E2E1E),
-  backgroundColor:Color(0xFF2E2E1E),
+  primaryColor: Colors.white,
+  accentColor: Color(0xFFFFE600),
+  scaffoldBackgroundColor: Color(0xFF171C2A),
+  backgroundColor:Color(0xFF171C2A),
   accentColorBrightness: Brightness.dark,
   appBarTheme: AppBarTheme(
   
-    color: Color(0xFF080807),
+    color: Color(0xFF000000),
     shadowColor: Colors.white,
     elevation: 0.0,
     brightness: Brightness.dark,

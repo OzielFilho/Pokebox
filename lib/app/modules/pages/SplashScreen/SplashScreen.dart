@@ -11,6 +11,7 @@ class SplashScreem extends StatefulWidget {
 }
 
 class _SplashScreemState extends State<SplashScreem> {
+  
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -36,7 +37,7 @@ class _SplashScreemState extends State<SplashScreem> {
           SizedBox(height: 15.0),
           Text(
             'Pokebox',
-            style: Theme.of(context).textTheme.headline1,
+            style: Theme.of(context).textTheme.headline2,
           ),
         ],
       ),

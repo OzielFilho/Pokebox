@@ -6,6 +6,8 @@ import 'package:pokebox/core/viewModel/poke_view_model/poke_view_model.dart';
 import 'package:pokebox/utils/theme/Theme.dart';
 
 import 'app/modules/pages/GolpeScreen/GolpeScreen.dart';
+import 'app/modules/pages/MaisProjetosScreen/MaisProjetosScreen.dart';
+import 'app/modules/pages/SobreScreen/SobreScreen.dart';
 
 void main() {
   runApp(PokeBox());
@@ -30,6 +32,8 @@ class PokeBox extends StatelessWidget {
         SplashScreem.id: (context) => SplashScreem(),
         HomeScreen.id: (context) => HomeScreen(),
         GolpeScreen.id: (context) => GolpeScreen(),
+        SobreScreen.id: (context) => SobreScreen(),
+        MaisProjetosScreen.id: (context) => MaisProjetosScreen(),
       },
     );
   }

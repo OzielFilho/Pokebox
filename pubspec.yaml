@@ -26,6 +26,9 @@ dependencies:
   #cached image network
   cached_network_image: ^2.3.3
 
+  #laucher url
+  url_launcher: ^5.7.10
+
   flutter_icons: ^1.1.0
 
   getwidget: ^1.2.2
