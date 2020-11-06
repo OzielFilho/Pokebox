@@ -1,6 +1,6 @@
 # Pokebox
 
-  O aplicativo reune seus pokemons favoritos e suas informações em um só local 
+  O aplicativo reúne seus pokemons favoritos e suas informações em um só local 
 
 ## Funcionalidade
 
