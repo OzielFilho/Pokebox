@@ -33,16 +33,17 @@ class _PokeWidgetState extends State<PokeWidget> {
       ),
       elevation: 50.0,
       titlePosition: GFPosition.start,
-      image: widget.urlImage != null
-          ? CachedNetworkImage(
-              imageUrl: widget.urlImage,
-              progressIndicatorBuilder: (context, url, downloadProgress) =>
-                  CircularProgressIndicator(
-                value: downloadProgress.progress,
-              ),
-              errorWidget: (context, url, error) =>
-                  Icon(FlutterIcons.error_outline_mdi),
-            )
+      image: widget.urlImage != null?
+      Image.network(widget.urlImage,scale: 0.1,height: 130,width: 150,)
+          // ? CachedNetworkImage(
+          //     imageUrl: widget.urlImage,
+          //     progressIndicatorBuilder: (context, url, downloadProgress) =>
+          //         CircularProgressIndicator(
+          //       value: downloadProgress.progress,
+          //     ),
+          //     errorWidget: (context, url, error) =>
+          //         Icon(FlutterIcons.error_outline_mdi),
+          //   )
           : Image.asset(
               AssetsHelper.pokemonImage,
               scale: 0.1,
@@ -52,7 +53,7 @@ class _PokeWidgetState extends State<PokeWidget> {
         title: widget.name != null
             ? Center(
                 child: Text(
-                  widget.name,
+                  widget.name.substring(0,1).toUpperCase()+widget.name.substring(1),
                   style: Theme.of(context).textTheme.button,
                 ),
               )
