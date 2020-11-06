@@ -1,16 +1,16 @@
-# pokebox
+# Pokebox
 
-A new Flutter project.
+  O aplicativo reune seus pokemons favoritos e suas informações em um só local 
 
-## Getting Started
+## Funcionalidade
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  O aplicativo possue 5 telas e estão organizadas da seguinte forma:
+    1. SplashScreen => Tela inicial onde aparece um icone e o nome do app
+        Depois de 3 segundos o usuário é direcionado para a HomeScreen
+    2. HomeScreen => Tela que reune cards com todos os pokemons vindos da api
+        Ao clicar em um card o usuário é direcionado para a tela de GolpesScreen 
+        Possue um Drawer
+    3. GolpesScreen => Tela reune informações específicas do pokemon selecionado na HomeScreen,como o nome,imagem e 
+    todos os golpes daquele pokemon especificado pelo índice.
+    4.Drawer => Drawer reune telas como HomeScreen,SobreScreen e MaisSobreScreen além de ter um espaço que exibe a imagem,nome 
+    e email do usuario atual.
