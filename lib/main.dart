@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'package:pokebox/app/modules/pages/HomeScreen/HomeScreen.dart';
-import 'package:pokebox/app/modules/pages/SplashScreen/SplashScreen.dart';
-import 'package:pokebox/core/viewModel/poke_view_model/poke_view_model.dart';
+
 import 'package:pokebox/utils/theme/Theme.dart';
 
-import 'app/modules/pages/GolpeScreen/GolpeScreen.dart';
-import 'app/modules/pages/MaisProjetosScreen/MaisProjetosScreen.dart';
-import 'app/modules/pages/SobreScreen/SobreScreen.dart';
+import 'app/modules/pages/golpe/golpe_screen.dart';
+import 'app/modules/pages/home/home_screen.dart';
+import 'app/modules/pages/mais_projetos/mais_projetos_screen.dart';
+import 'app/modules/pages/sobre/sobre_screen.dart';
+import 'app/modules/pages/splash/splash_screen.dart';
+import 'core/controller/poke_view_model/poke_view_model.dart';
+
 
 void main() {
   runApp(PokeBox());

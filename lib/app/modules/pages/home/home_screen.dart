@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 import 'package:getwidget/getwidget.dart';
-import 'package:pokebox/app/modules/pages/GolpeScreen/GolpeScreen.dart';
-import 'package:pokebox/core/viewModel/poke_view_model/poke_view_model.dart';
 
-import 'package:pokebox/utils/widgets/Draw/Draw.dart';
+import 'package:pokebox/app/modules/pages/golpe/golpe_screen.dart';
+import 'package:pokebox/core/controller/poke_view_model/poke_view_model.dart';
+
 import 'package:pokebox/utils/widgets/PokeWidget/PokeWidget.dart';
+import 'package:pokebox/utils/widgets/drawer/Draw.dart';
 
 class HomeScreen extends StatefulWidget {
   static String id = 'home_screen_page';

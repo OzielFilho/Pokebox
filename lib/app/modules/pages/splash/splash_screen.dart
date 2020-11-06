@@ -2,7 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:pokebox/app/modules/pages/HomeScreen/HomeScreen.dart';
+
+import 'package:pokebox/app/modules/pages/home/home_screen.dart';
 
 class SplashScreem extends StatefulWidget {
   static String id = 'splash_screen_page';
@@ -11,7 +12,6 @@ class SplashScreem extends StatefulWidget {
 }
 
 class _SplashScreemState extends State<SplashScreem> {
-  
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();

@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:getwidget/getwidget.dart';
-import 'package:pokebox/core/helpers/assetsHelper/AssetsHelper.dart';
+import 'package:pokebox/core/helpers/assetsHelper/assets_helper.dart';
 
 import 'package:pokebox/utils/textFormat/StringFormated.dart';
 
