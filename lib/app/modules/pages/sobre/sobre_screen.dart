@@ -38,7 +38,7 @@ class _SobreScreenState extends State<SobreScreen> {
                     height: 20,
                   ),
                   Text(
-                    '\tO aplicativo "Pokebox" reúne seus pokemons favoritos na palma de sua mão.\n\n\tNele você pode ver as fotos dos pokemons e o nome de cada um e ao clicar você pode observar os golpes do seu pokemon',
+                    '\tO aplicativo "Pokebox" reúne seus pokemons favoritos na palma de sua mão.\n\n\tNele você pode ver imagens dos pokemons e o nome de cada um e ao clicar você pode observar os golpes do seu pokemon',
                     style: Theme.of(context).textTheme.subtitle2,
                   ),
                 ],

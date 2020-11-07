@@ -36,25 +36,40 @@ abstract class _PokeViewModelBase with Store {
   @observable
   List<List<String>> golpesList = [];
 
+  @observable
+  List<String> golpesRetorno = [];
+
+  @observable
+  int j;
+
   @action
   Future<void> respoAPI() async {
     http.Response response = await http.get(url);
     retorno = json.decode(response.body);
     listPokemon = retorno['results'];
-    int j;
+
     for (j = 0; j < listPokemon.length; j++) {
-      String url2 = 'https://pokeapi.co/api/v2/pokemon-form/${j + 1}';
+      // Url para recuperar a imagem e os golpes do pokemon especificado pelo j
+      String urlForms = 'https://pokeapi.co/api/v2/pokemon-form/${j + 1}';
       String urlGolpes = 'https://pokeapi.co/api/v2/pokemon/${j + 1}';
-      response = await http.get(url2);
+
+      // resposta da api juntamente com um map para armazenar o corpo do retorno
+      response = await http.get(urlForms);
       retornoForm = json.decode(response.body);
+
+      // resposta da api juntamente com um map para armazenar o corpo do retorno
       http.Response golpes = await http.get(urlGolpes);
       retornoGolpes = json.decode(golpes.body);
-      List<String> gol = [];
-      gol.add(retornoGolpes['moves'][0]['move']['name']);
-      gol.add(retornoGolpes['moves'][1]['move']['name']);
-      gol.add(retornoGolpes['moves'][2]['move']['name']);
-      gol.add(retornoGolpes['moves'][3]['move']['name']);
-      golpesList.add(gol);
+      // adição do nome dos golpes de cada j(pokemon) a uma lista de strings
+      golpesRetorno.add(retornoGolpes['moves'][0]['move']['name']);
+      golpesRetorno.add(retornoGolpes['moves'][1]['move']['name']);
+      golpesRetorno.add(retornoGolpes['moves'][2]['move']['name']);
+      golpesRetorno.add(retornoGolpes['moves'][3]['move']['name']);
+      // adição dessa lista de golpes a uma lista para acessar os pokemons pelo 
+      // seu indice (j)
+      golpesList.add(golpesRetorno);
+      // adicao na lista de objetos Pokemon contendo todas as informaçoes do meu
+      // pokemon
       listObjPokemon.add(
         Pokemon(
           name: listPokemon[j]['name'],
@@ -63,18 +78,5 @@ abstract class _PokeViewModelBase with Store {
         ),
       );
     }
-
-    for (int i = 0; i < j; i++) {}
-    print(golpesList[0]);
-    // print(listObjPokemon[0].name);
-
-    // print(listPokemon[0]['url']);
   }
-
-  // @action
-  // Future<void> urlImageResponse() {
-  //   for (int i = 1; i <= listObjPokemon.length; i++) {
-  //     listObjPokemon[i].urlImage;
-  //   }
-  // }
 }

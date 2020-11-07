@@ -24,7 +24,6 @@ class _HomeScreenState extends State<HomeScreen> {
         iconTheme: new IconThemeData(color: Theme.of(context).primaryColor),
         searchBar: true,
         searchBarColorTheme: Theme.of(context).primaryColor,
-        
       ),
       drawer: Draw(),
       body: ListView(
@@ -76,7 +75,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                   _pokeViewModel.listObjPokemon[index].name,
                               urlImagePokemon:
                                   _pokeViewModel.listObjPokemon[index].urlImage,
-                              listGolpes: _pokeViewModel.listObjPokemon[index].golpes,
+                              listGolpes:
+                                  _pokeViewModel.listObjPokemon[index].golpes,
                             ),
                           );
                           print(

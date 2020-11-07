@@ -114,6 +114,36 @@ mixin _$PokeViewModel on _PokeViewModelBase, Store {
     });
   }
 
+  final _$golpesRetornoAtom = Atom(name: '_PokeViewModelBase.golpesRetorno');
+
+  @override
+  List<String> get golpesRetorno {
+    _$golpesRetornoAtom.reportRead();
+    return super.golpesRetorno;
+  }
+
+  @override
+  set golpesRetorno(List<String> value) {
+    _$golpesRetornoAtom.reportWrite(value, super.golpesRetorno, () {
+      super.golpesRetorno = value;
+    });
+  }
+
+  final _$jAtom = Atom(name: '_PokeViewModelBase.j');
+
+  @override
+  int get j {
+    _$jAtom.reportRead();
+    return super.j;
+  }
+
+  @override
+  set j(int value) {
+    _$jAtom.reportWrite(value, super.j, () {
+      super.j = value;
+    });
+  }
+
   final _$respoAPIAsyncAction = AsyncAction('_PokeViewModelBase.respoAPI');
 
   @override
@@ -130,7 +160,9 @@ url: ${url},
 retorno: ${retorno},
 retornoForm: ${retornoForm},
 retornoGolpes: ${retornoGolpes},
-golpesList: ${golpesList}
+golpesList: ${golpesList},
+golpesRetorno: ${golpesRetorno},
+j: ${j}
     ''';
   }
 }
