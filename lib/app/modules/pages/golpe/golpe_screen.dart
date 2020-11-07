@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:getwidget/getwidget.dart';
-import 'package:pokebox/utils/textFormat/StringFormated.dart';
-import 'package:pokebox/utils/widgets/drawer/Draw.dart';
+
+import '../../../../utils/textFormat/StringFormated.dart';
+import '../../../../utils/widgets/drawer/Draw.dart';
 
 class GolpeScreen extends StatefulWidget {
   static String id = 'golpe_page_id';

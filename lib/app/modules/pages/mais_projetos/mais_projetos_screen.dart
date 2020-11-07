@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:getwidget/getwidget.dart';
-
-import 'package:pokebox/utils/widgets/drawer/Draw.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../../../../utils/widgets/drawer/Draw.dart';
 
 class MaisProjetosScreen extends StatefulWidget {
   static String id = 'mais_projetos_page_id';

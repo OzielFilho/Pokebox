@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 
-import 'package:pokebox/utils/widgets/drawer/Draw.dart';
+import '../../../../utils/widgets/drawer/Draw.dart';
 
 class SobreScreen extends StatefulWidget {
   static String id = 'sobre_page_id';

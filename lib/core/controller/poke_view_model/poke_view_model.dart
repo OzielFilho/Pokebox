@@ -1,8 +1,11 @@
-import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
+
+import 'package:http/http.dart' as http;
 import 'package:mobx/mobx.dart';
-import 'package:pokebox/core/models/pokemon/Pokemon.dart';
+
+import '../../models/pokemon/Pokemon.dart';
+
 part 'poke_view_model.g.dart';
 
 class PokeViewModel = _PokeViewModelBase with _$PokeViewModel;

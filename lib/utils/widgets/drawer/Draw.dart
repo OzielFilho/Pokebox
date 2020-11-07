@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:getwidget/getwidget.dart';
 
-
-import 'package:pokebox/app/modules/pages/home/home_screen.dart';
-import 'package:pokebox/app/modules/pages/mais_projetos/mais_projetos_screen.dart';
-import 'package:pokebox/app/modules/pages/sobre/SobreScreen.dart';
-import 'package:pokebox/core/helpers/assetsHelper/assets_helper.dart';
+import '../../../app/modules/pages/home/home_screen.dart';
+import '../../../app/modules/pages/mais_projetos/mais_projetos_screen.dart';
+import '../../../app/modules/pages/sobre/sobre_screen.dart';
+import '../../../core/helpers/assetsHelper/assets_helper.dart';
 
 class Draw extends StatelessWidget {
   @override

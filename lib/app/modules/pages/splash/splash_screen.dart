@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
-import 'package:pokebox/app/modules/pages/home/home_screen.dart';
+import '../home/home_screen.dart';
 
 class SplashScreem extends StatefulWidget {
   static String id = 'splash_screen_page';

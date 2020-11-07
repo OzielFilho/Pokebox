@@ -2,9 +2,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:getwidget/getwidget.dart';
-import 'package:pokebox/core/helpers/assetsHelper/assets_helper.dart';
+import '../../../core/helpers/assetsHelper/assets_helper.dart';
 
-import 'package:pokebox/utils/textFormat/StringFormated.dart';
+import '../../textFormat/StringFormated.dart';
 
 class PokeWidget extends StatefulWidget {
   PokeWidget({
