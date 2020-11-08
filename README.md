@@ -14,7 +14,7 @@
         Possue um Drawer
         
     3. GolpesScreen => Tela reune informações específicas do pokemon selecionado na HomeScreen,como o nome,imagem e 
-    todos os golpes daquele pokemon especificado pelo índice.
+    todos os golpes e o tipo daquele pokemon especificado pelo índice.
     
     4.Drawer => Drawer reune telas como HomeScreen,SobreScreen e MaisSobreScreen além de ter um espaço que exibe a imagem,nome 
     e email do usuario atual.
