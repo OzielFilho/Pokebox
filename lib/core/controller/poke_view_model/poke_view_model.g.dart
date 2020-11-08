@@ -114,6 +114,21 @@ mixin _$PokeViewModel on _PokeViewModelBase, Store {
     });
   }
 
+  final _$typePokemonAtom = Atom(name: '_PokeViewModelBase.typePokemon');
+
+  @override
+  List<dynamic> get typePokemon {
+    _$typePokemonAtom.reportRead();
+    return super.typePokemon;
+  }
+
+  @override
+  set typePokemon(List<dynamic> value) {
+    _$typePokemonAtom.reportWrite(value, super.typePokemon, () {
+      super.typePokemon = value;
+    });
+  }
+
   final _$respoAPIAsyncAction = AsyncAction('_PokeViewModelBase.respoAPI');
 
   @override
@@ -130,7 +145,8 @@ url: ${url},
 retorno: ${retorno},
 retornoForm: ${retornoForm},
 retornoGolpes: ${retornoGolpes},
-golpesList: ${golpesList}
+golpesList: ${golpesList},
+typePokemon: ${typePokemon}
     ''';
   }
 }

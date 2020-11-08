@@ -8,10 +8,15 @@ import '../../../../utils/widgets/drawer/drawer_pers.dart';
 class GolpeScreen extends StatefulWidget {
   static String id = 'golpe_page_id';
 
-  GolpeScreen({this.namePokemon, this.urlImagePokemon, this.listGolpes});
+  GolpeScreen(
+      {this.namePokemon,
+      this.urlImagePokemon,
+      this.listGolpes,
+      this.typePokemon});
   final String namePokemon;
   final String urlImagePokemon;
   final List<String> listGolpes;
+  final List typePokemon;
   @override
   _GolpeScreenState createState() => _GolpeScreenState();
 }
@@ -54,7 +59,7 @@ class _GolpeScreenState extends State<GolpeScreen> {
                   height: 15,
                 ),
                 SizedBox(
-                  height: 250,
+                  height: 315,
                   child: Card(
                     color: Theme.of(context).backgroundColor,
                     child: Padding(
@@ -91,6 +96,35 @@ class _GolpeScreenState extends State<GolpeScreen> {
                                     .stringFormated(args.listGolpes[3]) +
                                 '\n',
                             style: Theme.of(context).textTheme.headline2,
+                          ),
+                          Row(
+                            children: <Widget>[
+                              Icon(
+                                FlutterIcons.pokeball_mco,
+                                size: 25,
+                                color: Colors.white,
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                'Tipo: ',
+                                style: Theme.of(context).textTheme.headline2,
+                              ),
+                            ],
+                          ),
+                          Expanded(
+                            child: ListView.builder(
+                              padding: EdgeInsets.only(left: 100),
+                              itemCount: args.typePokemon.length,
+                              itemBuilder: (context, index) {
+                                return Text(
+                                  StringFormated().stringFormated(
+                                      args.typePokemon[index]['type']['name']),
+                                  style: Theme.of(context).textTheme.headline2,
+                                );
+                              },
+                            ),
                           ),
                         ],
                       ),

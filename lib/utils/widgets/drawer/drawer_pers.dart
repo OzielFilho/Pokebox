@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:getwidget/getwidget.dart';
 
@@ -103,6 +104,7 @@ class DrawerPers extends StatelessWidget {
                   height: 230,
                 ),
                 ListTile(
+                  onTap: ()=> SystemNavigator.pop(),
                   title: Row(
                     children: [
                       Icon(FlutterIcons.close_mdi,

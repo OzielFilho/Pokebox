@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import 'package:getwidget/getwidget.dart';
@@ -11,11 +10,13 @@ class PokeWidget extends StatefulWidget {
     this.name,
     this.urlImage,
     this.color,
+    this.typePokemon,
   });
 
   final String name;
   final String urlImage;
   final Color color;
+  final List typePokemon;
 
   @override
   _PokeWidgetState createState() => _PokeWidgetState();
@@ -25,6 +26,7 @@ class _PokeWidgetState extends State<PokeWidget> {
   @override
   Widget build(BuildContext context) {
     return GFCard(
+      
       color:
           widget.color != null ? widget.color : Theme.of(context).primaryColor,
       padding: EdgeInsets.only(

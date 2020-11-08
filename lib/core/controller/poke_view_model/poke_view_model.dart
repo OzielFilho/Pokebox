@@ -36,6 +36,8 @@ abstract class _PokeViewModelBase with Store {
   @observable
   List<List<String>> golpesList = [];
 
+  @observable
+  List typePokemon = [];
 
   @action
   Future<void> respoAPI() async {
@@ -43,6 +45,7 @@ abstract class _PokeViewModelBase with Store {
     retorno = json.decode(response.body);
     listPokemon = retorno['results'];
     int j;
+
     for (j = 0; j < listPokemon.length; j++) {
       // Url para recuperar a imagem e os golpes do pokemon especificado pelo j
       String urlForms = 'https://pokeapi.co/api/v2/pokemon-form/${j + 1}';
@@ -67,14 +70,17 @@ abstract class _PokeViewModelBase with Store {
       golpesList.add(golpesRetorno);
       // adicao na lista de objetos Pokemon contendo todas as informaçoes do meu
       // pokemon
+
+      typePokemon.add(retornoGolpes['types']);
       listObjPokemon.add(
         Pokemon(
           name: listPokemon[j]['name'],
           urlImage: retornoForm['sprites']['front_default'],
           golpes: golpesList[j],
+          typePokemon: typePokemon[j],
         ),
       );
     }
-      print(golpesList.length);
+    
   }
 }

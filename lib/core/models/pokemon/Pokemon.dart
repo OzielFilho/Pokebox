@@ -4,5 +4,6 @@ class Pokemon {
   String name;
   String urlImage;
   List<String> golpes;
-  Pokemon({@required this.name, this.urlImage,this.golpes});
+  List typePokemon;
+  Pokemon({@required this.name, this.urlImage, this.golpes,this.typePokemon});
 }

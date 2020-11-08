@@ -80,6 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   _pokeViewModel.listObjPokemon[index].urlImage,
                               listGolpes:
                                   _pokeViewModel.listObjPokemon[index].golpes,
+                              typePokemon: _pokeViewModel.listObjPokemon[index].typePokemon,
                             ),
                           );
                           print(
@@ -91,6 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           urlImage:
                               _pokeViewModel.listObjPokemon[index].urlImage,
                           color: Theme.of(context).backgroundColor,
+                          typePokemon: _pokeViewModel.listObjPokemon[index].typePokemon,
                         ),
                       )
                     : CircularProgressIndicator();
