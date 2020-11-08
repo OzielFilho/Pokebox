@@ -7,7 +7,7 @@ import '../../../app/modules/pages/mais_projetos/mais_projetos_screen.dart';
 import '../../../app/modules/pages/sobre/sobre_screen.dart';
 import '../../../core/helpers/assetsHelper/assets_helper.dart';
 
-class Draw extends StatelessWidget {
+class DrawerPers extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GFDrawer(

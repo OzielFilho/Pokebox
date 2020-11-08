@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 
-import '../../../../utils/widgets/drawer/Draw.dart';
+import '../../../../utils/widgets/drawer/drawer_pers.dart';
 
 class SobreScreen extends StatefulWidget {
   static String id = 'sobre_page_id';
@@ -16,7 +16,7 @@ class _SobreScreenState extends State<SobreScreen> {
         appBar: GFAppBar(
           iconTheme: new IconThemeData(color: Theme.of(context).primaryColor),
         ),
-        drawer: Draw(),
+        drawer: DrawerPers(),
         body: Container(
           padding: const EdgeInsets.all(15.0),
           child: Column(

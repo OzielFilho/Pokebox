@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:pokebox/utils/widgets/poke_widget/poke_widget.dart';
 
 import '../../../../core/controller/poke_view_model/poke_view_model.dart';
-import '../../../../utils/widgets/PokeWidget/PokeWidget.dart';
-import '../../../../utils/widgets/drawer/Draw.dart';
+
+import '../../../../utils/widgets/drawer/drawer_pers.dart';
 import '../golpe/golpe_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -16,16 +17,18 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   var _pokeViewModel = GetIt.I.get<PokeViewModel>();
-
+  final _searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: GFAppBar(
         iconTheme: new IconThemeData(color: Theme.of(context).primaryColor),
         searchBar: true,
+        searchController: _searchController,
+        
         searchBarColorTheme: Theme.of(context).primaryColor,
       ),
-      drawer: Draw(),
+      drawer: DrawerPers(),
       body: ListView(
         shrinkWrap: true,
         physics: BouncingScrollPhysics(),
@@ -76,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               urlImagePokemon:
                                   _pokeViewModel.listObjPokemon[index].urlImage,
                               listGolpes:
-                                 _pokeViewModel.listObjPokemon[index].golpes,
+                                  _pokeViewModel.listObjPokemon[index].golpes,
                             ),
                           );
                           print(

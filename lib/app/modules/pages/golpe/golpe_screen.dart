@@ -3,7 +3,7 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:getwidget/getwidget.dart';
 
 import '../../../../utils/textFormat/StringFormated.dart';
-import '../../../../utils/widgets/drawer/Draw.dart';
+import '../../../../utils/widgets/drawer/drawer_pers.dart';
 
 class GolpeScreen extends StatefulWidget {
   static String id = 'golpe_page_id';
@@ -24,7 +24,7 @@ class _GolpeScreenState extends State<GolpeScreen> {
       appBar: GFAppBar(
         iconTheme: new IconThemeData(color: Theme.of(context).primaryColor),
       ),
-      drawer: Draw(),
+      drawer: DrawerPers(),
       body: Column(
         children: <Widget>[
           Container(

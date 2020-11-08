@@ -3,7 +3,7 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../../utils/widgets/drawer/Draw.dart';
+import '../../../../utils/widgets/drawer/drawer_pers.dart';
 
 class MaisProjetosScreen extends StatefulWidget {
   static String id = 'mais_projetos_page_id';
@@ -27,7 +27,7 @@ class _MaisProjetosScreenState extends State<MaisProjetosScreen> {
         appBar: GFAppBar(
           iconTheme: new IconThemeData(color: Theme.of(context).primaryColor),
         ),
-        drawer: Draw(),
+        drawer: DrawerPers(),
         body: Container(
           padding: const EdgeInsets.all(15.0),
           child: Column(
