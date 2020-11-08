@@ -28,6 +28,19 @@ class _GolpeScreenState extends State<GolpeScreen> {
     return Scaffold(
       appBar: GFAppBar(
         iconTheme: new IconThemeData(color: Theme.of(context).primaryColor),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: GestureDetector(
+              
+              onTap: () => Navigator.popAndPushNamed(context, HomeScreen.id),
+              child: Icon(
+                FlutterIcons.home_ant,
+                color: Theme.of(context).primaryColor,
+              ),
+            ),
+          ),
+        ],
       ),
       drawer: DrawerPers(),
       body: Column(
