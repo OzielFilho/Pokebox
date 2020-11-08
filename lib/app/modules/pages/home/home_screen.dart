@@ -76,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               urlImagePokemon:
                                   _pokeViewModel.listObjPokemon[index].urlImage,
                               listGolpes:
-                                  _pokeViewModel.listObjPokemon[index].golpes,
+                                 _pokeViewModel.listObjPokemon[index].golpes,
                             ),
                           );
                           print(
