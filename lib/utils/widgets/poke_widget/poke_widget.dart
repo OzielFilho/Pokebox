@@ -14,7 +14,7 @@ class PokeWidget extends StatefulWidget {
   });
 
   final String name;
-  final String urlImage;
+  final List<String> urlImage;
   final Color color;
   final List typePokemon;
 
@@ -26,7 +26,6 @@ class _PokeWidgetState extends State<PokeWidget> {
   @override
   Widget build(BuildContext context) {
     return GFCard(
-      
       color:
           widget.color != null ? widget.color : Theme.of(context).primaryColor,
       padding: EdgeInsets.only(
@@ -38,7 +37,7 @@ class _PokeWidgetState extends State<PokeWidget> {
       titlePosition: GFPosition.start,
       image: widget.urlImage != null
           ? Image.network(
-              widget.urlImage,
+              widget.urlImage[0],
               scale: 0.1,
               height: 130,
               width: 150,

@@ -15,7 +15,7 @@ class GolpeScreen extends StatefulWidget {
       this.listGolpes,
       this.typePokemon});
   final String namePokemon;
-  final String urlImagePokemon;
+  final List<String> urlImagePokemon;
   final List<String> listGolpes;
   final List typePokemon;
   @override
@@ -33,7 +33,6 @@ class _GolpeScreenState extends State<GolpeScreen> {
           Padding(
             padding: const EdgeInsets.all(15.0),
             child: GestureDetector(
-              
               onTap: () => Navigator.popAndPushNamed(context, HomeScreen.id),
               child: Icon(
                 FlutterIcons.home_ant,
@@ -60,14 +59,19 @@ class _GolpeScreenState extends State<GolpeScreen> {
                 SizedBox(
                   height: 15,
                 ),
-                GFImageOverlay(
-                  height: 250,
-                  width: 250,
-                  shape: BoxShape.circle,
-                  image: NetworkImage(
-                    args.urlImagePokemon,
-                  ),
-                  boxFit: BoxFit.fill,
+                GFCarousel(
+                  items: args.urlImagePokemon.map(
+                    (url) {
+                      return Container(
+                        margin: EdgeInsets.all(8.0),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                          child: Image.network(url,
+                              fit: BoxFit.cover, width: 250.0),
+                        ),
+                      );
+                    },
+                  ).toList(),
                 ),
                 SizedBox(
                   height: 15,

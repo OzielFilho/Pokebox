@@ -47,7 +47,7 @@ abstract class _PokeViewModelBase with Store {
     int j;
 
     for (j = 0; j < listPokemon.length; j++) {
-      // Url para recuperar a imagem e os golpes do pokemon especificado pelo j
+      // Url para recuperar as imagens e os golpes do pokemon especificado pelo j
       String urlForms = 'https://pokeapi.co/api/v2/pokemon-form/${j + 1}';
       String urlGolpes = 'https://pokeapi.co/api/v2/pokemon/${j + 1}';
 
@@ -68,19 +68,26 @@ abstract class _PokeViewModelBase with Store {
       // adição dessa lista de golpes a uma lista para acessar os pokemons pelo
       // seu indice (j)
       golpesList.add(golpesRetorno);
+      
+      //lista dos tipos do pokemon
+      typePokemon.add(retornoGolpes['types']);
+
+      //lista de imagens
+      List<String> images = [
+        retornoForm['sprites']['front_default'],
+        retornoForm['sprites']['back_default']
+      ];
+
       // adicao na lista de objetos Pokemon contendo todas as informaçoes do meu
       // pokemon
-
-      typePokemon.add(retornoGolpes['types']);
       listObjPokemon.add(
         Pokemon(
           name: listPokemon[j]['name'],
-          urlImage: retornoForm['sprites']['front_default'],
+          urlImage: images,
           golpes: golpesList[j],
           typePokemon: typePokemon[j],
         ),
       );
     }
-    
   }
 }
