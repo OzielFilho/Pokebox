@@ -13,8 +13,8 @@
         Ao clicar em um card o usuário é direcionado para a tela de GolpesScreen 
         Possue um Drawer
         
-    3. GolpesScreen => Tela reune informações específicas do pokemon selecionado na HomeScreen,como o nome,imagem e 
-    todos os golpes e o tipo daquele pokemon especificado pelo índice.
+    3. GolpesScreen => Tela reune informações específicas do pokemon selecionado na HomeScreen,como o nome,imagem, 
+    todos os golpes e tipos daquele pokemon especificado pelo índice.
     
     4.Drawer => Drawer reune telas como HomeScreen,SobreScreen e MaisSobreScreen além de ter um espaço que exibe a imagem,nome 
     e email do usuario atual.

@@ -4,7 +4,7 @@ import 'package:getwidget/getwidget.dart';
 import '../../../../utils/widgets/drawer/drawer_pers.dart';
 
 class SobreScreen extends StatefulWidget {
-  static String id = 'sobre_page_id';
+  
   @override
   _SobreScreenState createState() => _SobreScreenState();
 }

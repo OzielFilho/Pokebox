@@ -10,16 +10,12 @@ class PokeWidget extends StatefulWidget {
     this.urlImage,
     this.color,
     this.typePokemon,
-    this.altura,
-    this.peso,
   });
 
   final String name;
-  final List<String> urlImage;
+  final String urlImage;
   final Color color;
   final List typePokemon;
-  final int altura;
-  final int peso;
 
   @override
   _PokeWidgetState createState() => _PokeWidgetState();
@@ -29,17 +25,6 @@ class _PokeWidgetState extends State<PokeWidget> {
   @override
   Widget build(BuildContext context) {
     return GFCard(
-      content: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Text(
-              'Altura: ' + widget.altura.toString()+' cm' +'\n'+'Peso: ' + widget.peso.toString()+' g',
-              style: Theme.of(context).textTheme.button,
-            ),
-            
-          ],
-        ),
       color:
           widget.color != null ? widget.color : Theme.of(context).primaryColor,
       padding: EdgeInsets.only(
@@ -51,7 +36,7 @@ class _PokeWidgetState extends State<PokeWidget> {
       titlePosition: GFPosition.start,
       image: widget.urlImage != null
           ? Image.network(
-              widget.urlImage[0],
+              widget.urlImage,
               scale: 0.1,
               height: 130,
               width: 150,
@@ -62,7 +47,6 @@ class _PokeWidgetState extends State<PokeWidget> {
             ),
       title: GFListTile(
         padding: EdgeInsets.zero,
-        
         title: widget.name != null
             ? Center(
                 child: Text(

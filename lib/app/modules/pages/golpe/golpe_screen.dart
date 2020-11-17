@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:getwidget/getwidget.dart';
-import 'package:pokebox/app/modules/pages/home/home_screen.dart';
 
 import '../../../../utils/textFormat/StringFormated.dart';
 import '../../../../utils/widgets/drawer/drawer_pers.dart';
 
 class GolpeScreen extends StatefulWidget {
-  static String id = 'golpe_page_id';
+  
 
   GolpeScreen(
       {this.namePokemon,
@@ -33,7 +32,7 @@ class _GolpeScreenState extends State<GolpeScreen> {
           Padding(
             padding: const EdgeInsets.all(15.0),
             child: GestureDetector(
-              onTap: () => Navigator.popAndPushNamed(context, HomeScreen.id),
+              onTap: () => Navigator.popAndPushNamed(context, '/home'),
               child: Icon(
                 FlutterIcons.home_ant,
                 color: Theme.of(context).primaryColor,

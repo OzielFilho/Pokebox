@@ -9,36 +9,6 @@ part of 'poke_view_model.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$PokeViewModel on _PokeViewModelBase, Store {
-  final _$listPokemonAtom = Atom(name: '_PokeViewModelBase.listPokemon');
-
-  @override
-  List<dynamic> get listPokemon {
-    _$listPokemonAtom.reportRead();
-    return super.listPokemon;
-  }
-
-  @override
-  set listPokemon(List<dynamic> value) {
-    _$listPokemonAtom.reportWrite(value, super.listPokemon, () {
-      super.listPokemon = value;
-    });
-  }
-
-  final _$listObjPokemonAtom = Atom(name: '_PokeViewModelBase.listObjPokemon');
-
-  @override
-  ObservableList<Pokemon> get listObjPokemon {
-    _$listObjPokemonAtom.reportRead();
-    return super.listObjPokemon;
-  }
-
-  @override
-  set listObjPokemon(ObservableList<Pokemon> value) {
-    _$listObjPokemonAtom.reportWrite(value, super.listObjPokemon, () {
-      super.listObjPokemon = value;
-    });
-  }
-
   final _$urlAtom = Atom(name: '_PokeViewModelBase.url');
 
   @override
@@ -54,99 +24,65 @@ mixin _$PokeViewModel on _PokeViewModelBase, Store {
     });
   }
 
-  final _$retornoAtom = Atom(name: '_PokeViewModelBase.retorno');
+  final _$listObjAtom = Atom(name: '_PokeViewModelBase.listObj');
 
   @override
-  Map<String, dynamic> get retorno {
-    _$retornoAtom.reportRead();
-    return super.retorno;
+  ObservableList<Pokemon> get listObj {
+    _$listObjAtom.reportRead();
+    return super.listObj;
   }
 
   @override
-  set retorno(Map<String, dynamic> value) {
-    _$retornoAtom.reportWrite(value, super.retorno, () {
-      super.retorno = value;
+  set listObj(ObservableList<Pokemon> value) {
+    _$listObjAtom.reportWrite(value, super.listObj, () {
+      super.listObj = value;
     });
   }
 
-  final _$retornoFormAtom = Atom(name: '_PokeViewModelBase.retornoForm');
+  final _$responseAtom = Atom(name: '_PokeViewModelBase.response');
 
   @override
-  Map<String, dynamic> get retornoForm {
-    _$retornoFormAtom.reportRead();
-    return super.retornoForm;
+  Response<dynamic> get response {
+    _$responseAtom.reportRead();
+    return super.response;
   }
 
   @override
-  set retornoForm(Map<String, dynamic> value) {
-    _$retornoFormAtom.reportWrite(value, super.retornoForm, () {
-      super.retornoForm = value;
+  set response(Response<dynamic> value) {
+    _$responseAtom.reportWrite(value, super.response, () {
+      super.response = value;
     });
   }
 
-  final _$retornoGolpesAtom = Atom(name: '_PokeViewModelBase.retornoGolpes');
+  final _$dioAtom = Atom(name: '_PokeViewModelBase.dio');
 
   @override
-  Map<String, dynamic> get retornoGolpes {
-    _$retornoGolpesAtom.reportRead();
-    return super.retornoGolpes;
+  Dio get dio {
+    _$dioAtom.reportRead();
+    return super.dio;
   }
 
   @override
-  set retornoGolpes(Map<String, dynamic> value) {
-    _$retornoGolpesAtom.reportWrite(value, super.retornoGolpes, () {
-      super.retornoGolpes = value;
+  set dio(Dio value) {
+    _$dioAtom.reportWrite(value, super.dio, () {
+      super.dio = value;
     });
   }
 
-  final _$golpesListAtom = Atom(name: '_PokeViewModelBase.golpesList');
+  final _$getJsonAsyncAction = AsyncAction('_PokeViewModelBase.getJson');
 
   @override
-  List<List<String>> get golpesList {
-    _$golpesListAtom.reportRead();
-    return super.golpesList;
-  }
-
-  @override
-  set golpesList(List<List<String>> value) {
-    _$golpesListAtom.reportWrite(value, super.golpesList, () {
-      super.golpesList = value;
-    });
-  }
-
-  final _$typePokemonAtom = Atom(name: '_PokeViewModelBase.typePokemon');
-
-  @override
-  List<dynamic> get typePokemon {
-    _$typePokemonAtom.reportRead();
-    return super.typePokemon;
-  }
-
-  @override
-  set typePokemon(List<dynamic> value) {
-    _$typePokemonAtom.reportWrite(value, super.typePokemon, () {
-      super.typePokemon = value;
-    });
-  }
-
-  final _$respoAPIAsyncAction = AsyncAction('_PokeViewModelBase.respoAPI');
-
-  @override
-  Future<void> respoAPI() {
-    return _$respoAPIAsyncAction.run(() => super.respoAPI());
+  Future<void> getJson() {
+    return _$getJsonAsyncAction.run(() => super.getJson());
   }
 
   @override
   String toString() {
     return '''
-listPokemon: ${listPokemon},
-listObjPokemon: ${listObjPokemon},
 url: ${url},
-retorno: ${retorno},
-retornoForm: ${retornoForm},
-retornoGolpes: ${retornoGolpes},
-golpesList: ${golpesList},
-typePokemon: ${typePokemon}
+listObj: ${listObj},
+response: ${response},
+dio: ${dio}
     ''';
   }
 }

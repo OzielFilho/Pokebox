@@ -1,7 +1,6 @@
 import 'dart:async';
-import 'dart:convert';
 
-import 'package:http/http.dart' as http;
+import 'package:dio/dio.dart';
 import 'package:mobx/mobx.dart';
 
 import '../../models/pokemon/Pokemon.dart';
@@ -12,82 +11,27 @@ class PokeViewModel = _PokeViewModelBase with _$PokeViewModel;
 
 abstract class _PokeViewModelBase with Store {
   _PokeViewModelBase() {
-    respoAPI();
+    getJson();
   }
-
-  @observable
-  var listPokemon = [];
-
-  @observable
-  var listObjPokemon = <Pokemon>[].asObservable();
-
   @observable
   String url = 'https://pokeapi.co/api/v2/pokemon/';
 
   @observable
-  Map<String, dynamic> retorno = {};
+  var listObj = <Pokemon>[].asObservable();
 
   @observable
-  Map<String, dynamic> retornoForm = {};
+  Response response;
 
   @observable
-  Map<String, dynamic> retornoGolpes = {};
-
-  @observable
-  List<List<String>> golpesList = [];
-
-  @observable
-  List typePokemon = [];
+  var dio = new Dio();
 
   @action
-  Future<void> respoAPI() async {
-    http.Response response = await http.get(url);
-    retorno = json.decode(response.body);
-    listPokemon = retorno['results'];
-    int j;
-
-    for (j = 0; j < listPokemon.length; j++) {
-      // Url para recuperar as imagens e os golpes do pokemon especificado pelo j
-      String urlForms = 'https://pokeapi.co/api/v2/pokemon-form/${j + 1}';
-      String urlGolpes = 'https://pokeapi.co/api/v2/pokemon/${j + 1}';
-
-      // resposta da api juntamente com um map para armazenar o corpo do retorno
-      response = await http.get(urlForms);
-      retornoForm = json.decode(response.body);
-
-      // resposta da api juntamente com um map para armazenar o corpo do retorno
-      http.Response golpes = await http.get(urlGolpes);
-      retornoGolpes = json.decode(golpes.body);
-
-      List<String> golpesRetorno = [];
-      // adição do nome dos golpes de cada j(pokemon) a uma lista de strings
-      golpesRetorno.add(retornoGolpes['moves'][0]['move']['name']);
-      golpesRetorno.add(retornoGolpes['moves'][1]['move']['name']);
-      golpesRetorno.add(retornoGolpes['moves'][2]['move']['name']);
-      golpesRetorno.add(retornoGolpes['moves'][3]['move']['name']);
-      // adição dessa lista de golpes a uma lista para acessar os pokemons pelo
-      // seu indice (j)
-      golpesList.add(golpesRetorno);
-      
-      //lista dos tipos do pokemon
-      typePokemon.add(retornoGolpes['types']);
-
-      //lista de imagens
-      List<String> images = [
-        retornoForm['sprites']['front_default'],
-        retornoForm['sprites']['back_default']
-      ];
-
-      // adicao na lista de objetos Pokemon contendo todas as informaçoes do meu
-      // pokemon
-      listObjPokemon.add(
-        Pokemon(
-          name: listPokemon[j]['name'],
-          urlImage: images,
-          golpes: golpesList[j],
-          typePokemon: typePokemon[j],
-        ),
-      );
+  Future<void> getJson() async {
+    int i = 1;
+    while (i < 70) {
+      response = await dio.get(url + i.toString());
+      listObj.add(Pokemon.fromJson(response.data));
+      i++;
     }
   }
 }

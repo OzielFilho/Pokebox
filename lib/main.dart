@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:get_it/get_it.dart';
-
-import 'app/modules/pages/golpe/golpe_screen.dart';
-import 'app/modules/pages/home/home_screen.dart';
-import 'app/modules/pages/mais_projetos/mais_projetos_screen.dart';
-import 'app/modules/pages/sobre/sobre_screen.dart';
-import 'app/modules/pages/splash/splash_screen.dart';
 import 'core/controller/poke_view_model/poke_view_model.dart';
+import 'core/modules/app_module/app_module.dart';
 import 'utils/theme/Theme.dart';
 
-
 void main() {
-  runApp(PokeBox());
+  runApp(ModularApp(
+    module: AppModule(),
+  ));
   registerSingletons();
 }
 
@@ -28,14 +25,16 @@ class PokeBox extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Pokebox',
       theme: appTheme,
-      initialRoute: SplashScreem.id,
-      routes: {
-        SplashScreem.id: (context) => SplashScreem(),
-        HomeScreen.id: (context) => HomeScreen(),
-        GolpeScreen.id: (context) => GolpeScreen(),
-        SobreScreen.id: (context) => SobreScreen(),
-        MaisProjetosScreen.id: (context) => MaisProjetosScreen(),
-      },
+      initialRoute: "/",
+      navigatorKey: Modular.navigatorKey,
+      onGenerateRoute: Modular.generateRoute,
+      // routes: {
+      //   SplashScreem.id: (context) => SplashScreem(),
+      //   HomeScreen.id: (context) => HomeScreen(),
+      //   GolpeScreen.id: (context) => GolpeScreen(),
+      //   SobreScreen.id: (context) => SobreScreen(),
+      //   MaisProjetosScreen.id: (context) => MaisProjetosScreen(),
+      // },
     );
   }
 }

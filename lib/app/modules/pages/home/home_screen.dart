@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 import 'package:getwidget/getwidget.dart';
-import 'package:pokebox/utils/widgets/poke_widget/poke_widget.dart';
 
 import '../../../../core/controller/poke_view_model/poke_view_model.dart';
-
 import '../../../../utils/widgets/drawer/drawer_pers.dart';
+import '../../../../utils/widgets/poke_widget/poke_widget.dart';
 import '../golpe/golpe_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  static String id = 'home_screen_page';
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -18,6 +16,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   var _pokeViewModel = GetIt.I.get<PokeViewModel>();
   final _searchController = TextEditingController();
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +24,6 @@ class _HomeScreenState extends State<HomeScreen> {
         iconTheme: new IconThemeData(color: Theme.of(context).primaryColor),
         searchBar: true,
         searchController: _searchController,
-        
         searchBarColorTheme: Theme.of(context).primaryColor,
       ),
       drawer: DrawerPers(),
@@ -65,34 +63,38 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisSpacing: 0.5,
                 childAspectRatio: 0.7,
               ),
-              itemCount: _pokeViewModel.listObjPokemon.length,
+              itemCount: _pokeViewModel.listObj.length,
               itemBuilder: (context, index) {
-                return _pokeViewModel.listObjPokemon != null
+                return _pokeViewModel.listObj != null
                     ? GestureDetector(
                         onTap: () {
                           Navigator.pushReplacementNamed(
                             context,
-                            GolpeScreen.id,
+                            '/golpe',
                             arguments: GolpeScreen(
                               namePokemon:
-                                  _pokeViewModel.listObjPokemon[index].name,
+                                  _pokeViewModel.listObj[index].name,
                               urlImagePokemon:
-                                  _pokeViewModel.listObjPokemon[index].urlImage,
+                                  _pokeViewModel.listObj[index].urlImage,
                               listGolpes:
-                                  _pokeViewModel.listObjPokemon[index].golpes,
-                              typePokemon: _pokeViewModel.listObjPokemon[index].typePokemon,
+                                  _pokeViewModel.listObj[index].golpes,
+                              typePokemon: _pokeViewModel
+                                  .listObj[index].typePokemon,
                             ),
                           );
                           print(
-                            'pokemon ${_pokeViewModel.listObjPokemon[index].name}',
+                            'pokemon ${_pokeViewModel.listObj[index].name}',
                           );
                         },
                         child: PokeWidget(
-                          name: _pokeViewModel.listObjPokemon[index].name,
+                          name: _pokeViewModel.listObj[index].name,
                           urlImage:
-                              _pokeViewModel.listObjPokemon[index].urlImage,
+                              _pokeViewModel.listObj[index].urlImage,
                           color: Theme.of(context).backgroundColor,
-                          typePokemon: _pokeViewModel.listObjPokemon[index].typePokemon,
+                          typePokemon:
+                              _pokeViewModel.listObj[index].typePokemon,
+                          altura: _pokeViewModel.listObj[index].altura.toInt(),
+                          peso: _pokeViewModel.listObj[index].peso
                         ),
                       )
                     : CircularProgressIndicator();

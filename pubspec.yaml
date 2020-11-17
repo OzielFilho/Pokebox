@@ -29,8 +29,15 @@ dependencies:
   #laucher url
   url_launcher: ^5.7.10
 
+  #modular
+  flutter_modular : 
+
+  #dio
+  dio: ^3.0.10
+
   flutter_icons: ^1.1.0
 
+  #widgets
   getwidget: ^1.2.2
  
   cupertino_icons: ^1.0.0

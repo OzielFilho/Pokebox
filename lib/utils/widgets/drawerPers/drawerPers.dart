@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:getwidget/getwidget.dart';
 
-
 import '../../../core/helpers/assetsHelper/assets_helper.dart';
 
 class DrawerPers extends StatelessWidget {
@@ -59,8 +58,7 @@ class DrawerPers extends StatelessWidget {
                       ),
                     ],
                   ),
-                  onTap: () =>
-                      Navigator.pushReplacementNamed(context, '/home'),
+                  onTap: () => Navigator.pushReplacementNamed(context, '/home'),
                 ),
                 ListTile(
                   onTap: () =>
@@ -82,8 +80,8 @@ class DrawerPers extends StatelessWidget {
                   ),
                 ),
                 ListTile(
-                  onTap: () => Navigator.pushReplacementNamed(
-                      context, '/maisprojetos'),
+                  onTap: () =>
+                      Navigator.pushReplacementNamed(context, '/maisprojetos'),
                   title: Row(
                     children: [
                       Icon(FlutterIcons.pokeball_mco,
@@ -102,7 +100,7 @@ class DrawerPers extends StatelessWidget {
                   height: 230,
                 ),
                 ListTile(
-                  onTap: ()=> SystemNavigator.pop(),
+                  onTap: () => SystemNavigator.pop(),
                   title: Row(
                     children: [
                       Icon(FlutterIcons.close_mdi,

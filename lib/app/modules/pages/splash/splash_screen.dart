@@ -2,11 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
-import '../home/home_screen.dart';
+
 
 class SplashScreem extends StatefulWidget {
-  static String id = 'splash_screen_page';
+  
   @override
   _SplashScreemState createState() => _SplashScreemState();
 }
@@ -17,7 +18,7 @@ class _SplashScreemState extends State<SplashScreem> {
     super.didChangeDependencies();
     Timer(
       Duration(seconds: 3),
-      () => Navigator.pushNamed(context, HomeScreen.id),
+      () => Modular.to.pushReplacementNamed('/home'),
     );
   }
 

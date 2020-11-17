@@ -6,7 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../../../utils/widgets/drawer/drawer_pers.dart';
 
 class MaisProjetosScreen extends StatefulWidget {
-  static String id = 'mais_projetos_page_id';
+  
   @override
   _MaisProjetosScreenState createState() => _MaisProjetosScreenState();
 }
